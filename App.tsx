@@ -1,9 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import styled from 'styled-components/native';
-import { NativeRouter, BackButton } from 'react-router-native';
+import { StatusBar } from 'expo-status-bar'
+import React from 'react'
+import styled from 'styled-components/native'
+import { NativeRouter, BackButton } from 'react-router-native'
 
-import Routes from '~/Routes';
+import Routes from '~/Routes'
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         </SafeAreaView>
       </BackButton>
     </NativeRouter>
-  );
+  )
 }
 
 const SafeAreaView = styled.SafeAreaView`
@@ -23,4 +23,5 @@ const SafeAreaView = styled.SafeAreaView`
   align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
-`;
+  background-color: rgb(49, 49, 91);
+`
