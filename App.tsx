@@ -1,20 +1,23 @@
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import styled from 'styled-components/native'
+import styled, { ThemeProvider } from 'styled-components/native'
 import { NativeRouter, BackButton } from 'react-router-native'
 
 import Routes from '~/Routes'
+import theme from '~/theme'
 
 export default function App() {
   return (
-    <NativeRouter>
-      <BackButton>
-        <SafeAreaView>
-          <StatusBar style="auto" />
-          <Routes />
-        </SafeAreaView>
-      </BackButton>
-    </NativeRouter>
+    <ThemeProvider theme={theme}>
+      <NativeRouter>
+        <BackButton>
+          <SafeAreaView>
+            <StatusBar style="auto" />
+            <Routes />
+          </SafeAreaView>
+        </BackButton>
+      </NativeRouter>
+    </ThemeProvider>
   )
 }
 
@@ -23,5 +26,5 @@ const SafeAreaView = styled.SafeAreaView`
   align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: rgb(49, 49, 91);
+  background-color: ${(props) => props.theme.colors.primaryDark};
 `
