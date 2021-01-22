@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components/native'
 
 import Task, { TaskItem } from '~/components/Task'
+import AppContext from '~/AppContext'
 
 const Home: React.FC = () => {
-  const [tasks, setTasks] = useState<TaskItem[]>([
-    { id: '1', title: 'task 1', notes: '', completed: true },
-    { id: '2', title: 'task 2', notes: '', completed: false },
-    { id: '3', title: 'task 3', notes: '', completed: false }
-  ])
-
+  const { tasks } = useContext(AppContext)
   return (
     <Wrapper>
       {tasks.map((task) => (
@@ -19,7 +15,7 @@ const Home: React.FC = () => {
   )
 }
 
-const Wrapper = styled.View`
+const Wrapper = styled.ScrollView`
   flex: 1;
   background-color: transparent;
 `
