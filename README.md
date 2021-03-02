@@ -1,4 +1,4 @@
-# Enkle - Simple Task Management
+# Enkel - Simple Task Management
 
 ## Setup
 
